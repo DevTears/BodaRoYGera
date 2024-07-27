@@ -22,3 +22,22 @@ const countdownInterval = setInterval(() => {
     }
 }, 1000);
 
+document.addEventListener('DOMContentLoaded', function() {
+    const playButton = document.getElementById('floating-play-button');
+    const playIcon = document.getElementById('play-icon');
+    const audio = document.getElementById('background-music');
+
+    playButton.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playIcon.classList.remove('fa-play');
+            playIcon.classList.add('fa-stop');
+        } else {
+            audio.pause();
+            playIcon.classList.remove('fa-stop');
+            playIcon.classList.add('fa-play');
+        }
+    });
+});
+
+

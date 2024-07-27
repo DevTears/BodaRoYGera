@@ -25,6 +25,29 @@ p {
     margin: 0 10px; /* Espaciado para evitar scroll lateral */
 }
 
+/* Floating Button Styles */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.floating-button i {
+    font-size: 12px;
+}
+
 #section1 {
     background: url('../src/Fotos/1.png') no-repeat center center;
     background-size: cover;
