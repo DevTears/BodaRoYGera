@@ -13,6 +13,25 @@
     src: url(/src/fonts/eyesome-duo-script.otf);
 }
 
+/* Barra de desplazamiento personalizada */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2c5dff; /* Color azul francia */
+    border-radius: 10px; /* Bordes redondeados para un aspecto más delicado */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la pista */
+}
+
+/* Ocultar las flechas de desplazamiento */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
 body {
     background-color: #F9F6EE;
     margin: 0;
@@ -30,7 +49,7 @@ p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25d366;
+    background-color: #2c5dff;
     color: white;
     border: none;
     border-radius: 50%;
@@ -146,6 +165,73 @@ br {
     border-radius: 20px;
 }
 
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo borroso */
+    backdrop-filter: blur(5px); /* Borroso */
+    -webkit-backdrop-filter: blur(5px); /* Borroso */
+    padding-top: 20px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content .btn-primary {
+    background-color: #2c5dff;
+    border-color: #2c5dff;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
 .carousel-item {
     min-height: 60vh;
     background: #777;
@@ -168,4 +254,119 @@ br {
 
 .roygera {
     font-family: "Dream_Avenue";
+}
+
+/* CSS base (el que ya tienes) */
+
+/* Media Queries para Notebook y Desktop */
+@media (min-width: 768px) {
+    /* Ajustes generales */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: initial;
+    }
+
+    #section1 h1 {
+        font-size: 5vw; /* Ajustar tamaño de "Nos Casamos" */
+    }
+
+    .floating-button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .floating-button i {
+        font-size: 24px; /* Ajustar tamaño del botón de play */
+    }
+
+    #section2 h2.date {
+        font-size: 3vw; /* Ajustar tamaño del texto de la fecha */
+    }
+
+    #section2 p {
+        font-size: 2vw; /* Ajustar tamaño del texto descriptivo */
+    }
+
+    .time-unit .number {
+        font-size: 3vw; /* Ajustar tamaño de los números del contador */
+    }
+
+    #section3 h2, #section4 h2, #section6 h2, #section8 h2 {
+        font-size: 4vw; /* Ajustar tamaño de los títulos de secciones */
+    }
+
+    #section3 img, #section4 img, #section6 img, #section8 img {
+        max-width: 20vw; /* Ajustar tamaño de las imágenes de los íconos */
+    }
+
+    #section3 p, #section4 p, #section6 p, #section8 p {
+        font-size: 1.5vw; /* Ajustar tamaño del texto debajo de los íconos */
+    }
+
+    .btn {
+        font-size: 1.5vw; /* Ajustar tamaño de los botones */
+    }
+
+    #section5, #section9 {
+        background-size: contain; /* Ajustar tamaño de las imágenes de fondo */
+    }
+
+    .carousel-item {
+        min-height: 40vh; /* Ajustar altura del carrusel */
+    }
+
+    #section10 p.texto-final {
+        font-size: 1.5vw; /* Ajustar tamaño del texto final */
+    }
+}
+
+/* Otras media queries para diferentes tamaños de pantalla */
+@media (min-width: 992px) {
+    #section1 h1 {
+        font-size: 7vw !important;
+    }
+
+    #section1 h2 {
+        font-size: 3vw !important;;
+    }
+
+    #section2 h2 {
+        font-size: 7vw !important;
+    }
+
+    #section2 h2.date {
+        font-size: 2.5vw;
+    }
+
+    #section2 p {
+        font-size: 4vw !important;
+    }
+
+    .time-unit .number {
+        font-size: 5vw;
+    }
+
+    #section3 h2, #section4 h2, #section6 h2, #section8 h2 {
+        font-size: 7vw !important;
+    }
+
+    #section3 img, #section4 img, #section6 img, #section8 img {
+        max-width: 20vw !important;
+        border-radius: 100px;
+    }
+
+    #section3 p, #section4 p, #section6 p, #section8 p {
+        font-size: 2vw;
+    }
+
+    .btn {
+        font-size: 1.5vw !important;
+    }
+
+    #section10 p.texto-final {
+        font-size: 2vw;
+    }
+
+    .roygera {
+        font-size: 2vw;
+    }
 }

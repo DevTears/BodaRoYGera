@@ -175,7 +175,29 @@
         <h2 style="font-size: 10vw;">Música</h2>
         <img src="src/Musica.png" alt="Notas Musicales" class="img-fluid my-3">
         <p class="text-center" style="max-width: 100%; margin: auto;">¡Que no falte tu tema favorito!</p>
-        <a href="https://www.google.com/maps/place/Ubicacion+de+la+Ceremonia" target="_blank"><button type="button" class="btn btn-outline-primary mt-3 btn-lg" style="font-size: 1rem; font-family: 'Antic-Regular'">Recomendalo acá</button></a>
+        <button id="recomendarButton" type="button" class="btn btn-outline-primary mt-3 btn-lg" style="font-size: 1rem; font-family: 'Antic-Regular'">Recomendalo acá</button>
+      </div>
+      <!-- Formulario Emergente -->
+      <div id="recomendacionModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="recomendacionForm" action="https://formspree.io/f/xqazqzwg" method="POST">
+            <div class="form-group">
+              <label for="nombre" style="font-family: 'Antic-Regular'">Tu Nombre (opcional):</label>
+              <input type="text" id="nombre" name="nombre" class="form-control" style="font-family: 'Antic-Regular'">
+            </div>
+            <div class="form-group">
+              <label for="cancion" style="font-family: 'Antic-Regular'">Nombre de la Canción (requerido):</label>
+              <input type="text" id="cancion" name="cancion" class="form-control" required style="font-family: 'Antic-Regular'">
+            </div>
+            <div class="form-group">
+              <label for="artista" style="font-family: 'Antic-Regular'">Artista (opcional):</label>
+              <input type="text" id="artista" name="artista" class="form-control" style="font-family: 'Antic-Regular'">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+          <div id="successMessage" class="alert alert-success" style="display: none; margin-top: 10px;">¡Recomendado con éxito!</div>
+        </div>
       </div>
     </section>
     

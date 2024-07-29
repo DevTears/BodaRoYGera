@@ -40,4 +40,60 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const recomendarButton = document.getElementById('recomendarButton');
+    const modal = document.getElementById('recomendacionModal');
+    const closeBtn = document.querySelector('.close');
+    const recomendacionForm = document.getElementById('recomendacionForm');
+    const successMessage = document.getElementById('successMessage');
+
+    recomendarButton.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    recomendacionForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const cancionInput = document.getElementById('cancion');
+        if (cancionInput.value.trim() === '') {
+            alert('El campo "Nombre de la Canción" es requerido.');
+            return;
+        }
+
+        const formData = new FormData(recomendacionForm);
+        fetch(recomendacionForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                recomendacionForm.reset();
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    modal.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Hubo un error al enviar tu recomendación. Por favor, intenta nuevamente.');
+            }
+        }).catch(error => {
+            alert('Hubo un error al enviar tu recomendación. Por favor, intenta nuevamente.');
+        });
+    });
+});
+
+
+
 
