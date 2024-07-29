@@ -94,6 +94,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.section');
+    const observerOptions = {
+        threshold: 0.1 // Adjust this value to trigger the animation earlier or later
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        section.classList.add('section-hidden');
+        observer.observe(section);
+    });
+
+    const playButton = document.getElementById('floating-play-button');
+    const playIcon = document.getElementById('play-icon');
+    const audio = document.getElementById('background-music');
+
+    playButton.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            playIcon.classList.remove('fa-play');
+            playIcon.classList.add('fa-stop');
+        } else {
+            audio.pause();
+            playIcon.classList.remove('fa-stop');
+            playIcon.classList.add('fa-play');
+        }
+    });
+});
+
+
 
 
 
