@@ -178,7 +178,7 @@ br {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo borroso */
     backdrop-filter: blur(5px); /* Borroso */
     -webkit-backdrop-filter: blur(5px); /* Borroso */
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .modal-content {
